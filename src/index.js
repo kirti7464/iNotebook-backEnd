@@ -6,13 +6,7 @@ const  userRoute  = require("./Routes/userRoutes")
 require("dotenv").config()
 const  cors = require('cors') 
 
-app.use(cors(
-    {
-        origin: ["https://deploy-mern-frontend.vercel.app"],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
-));
+app.use(cors());
 const {MONGO_URL,PORT}=process.env
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
